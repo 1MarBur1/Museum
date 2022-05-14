@@ -34,7 +34,7 @@ const MainPage = (): JSX.Element => {
 					setTextOpacity(100);
 					setCurrentTextID(currentTextID+1);
 				}, 450);
-			}, 2000);
+			}, 4000);
 		}
 	}, [currentTextID]);
 
