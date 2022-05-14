@@ -1,7 +1,5 @@
 import { GetStaticProps } from 'next';
 import { useEffect, useState } from 'react';
-import { text } from 'stream/consumers';
-
 const MainPage = (): JSX.Element => {
 	const [width, setWidth] = useState<string>('75px');
 	const [height, setHeight] = useState<string>('75px');
@@ -16,7 +14,7 @@ const MainPage = (): JSX.Element => {
 		'В этом музее ты можешь увидеть различные онлайн экспонаты на тему образования',
 		'Мы подготавливали его для того, чтобы ты смог посетить первый в мире онлайн музей посвященный образованию',
 		'Надеемся, что тебе понравится, приятного просмотра!',
-		'А если захочешь увидеть все вживую, приходи в наш музей'
+		'А если захочешь увидеть все вживую, приходи в наш музей',
 	];
 
 	const onClick = () => {
@@ -36,7 +34,7 @@ const MainPage = (): JSX.Element => {
 					setTextOpacity(100);
 					setCurrentTextID(currentTextID+1);
 				}, 450);
-			}, 2000)
+			}, 2000);
 		}
 	}, [currentTextID]);
 
@@ -44,7 +42,8 @@ const MainPage = (): JSX.Element => {
 		<div className='w-screen h-screen flex justify-center'>
 			<button
 				onClick={onClick} 
-				className={'bg-black inline-block rounded-full duration-1000 absolute' + (width === '3000px' ? ' cursor-default' : '')}
+				className={'bg-black inline-block rounded-full duration-1000 absolute ' 
+                    + (width === '3000px' ? 'cursor-default' : '')}
 				style={{
 					width: width,
 					height: height,
@@ -58,7 +57,8 @@ const MainPage = (): JSX.Element => {
 
 			<div className='flex items-center px-20'>
 				<h1 
-					className={'text-white font-bold z-10 text-5xl duration-500 text-center ' + (width === '3000px' ? 'block' : 'hidden')}
+					className={'text-white font-bold z-10 text-5xl duration-500 text-center ' 
+                        + (width === '3000px' ? 'block' : 'hidden')}
 					style={{
 						opacity: textOpacity,
 					}}	
@@ -75,7 +75,7 @@ const MainPage = (): JSX.Element => {
 				</h2>
 			)}
 		</div>
-	)
+	);
 };
 
 export default MainPage;
