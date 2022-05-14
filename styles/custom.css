@@ -1,0 +1,12 @@
+.text-gradient {
+	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+}
+
+.show-alert-button:hover + .alert-block {
+	display: block;
+}
+
+.slick-slide {
+	margin: 0 10px;
+}

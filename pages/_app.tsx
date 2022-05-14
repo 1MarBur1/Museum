@@ -1,8 +1,23 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import { AppProps } from 'next/app';
+import Head from 'next/head';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import '../styles/globals.css';
+import '../styles/font.css';
+import '../styles/custom.css';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+const App = ({ Component, pageProps }: AppProps): JSX.Element => {
+	const queryClient = new QueryClient();
 
-export default MyApp
+	return (
+		<QueryClientProvider client={queryClient}>
+			<Head>
+				<title>
+					Museum
+				</title>
+			</Head>
+			<Component {...pageProps} />
+		</QueryClientProvider>
+	);
+};
+
+export default App;
