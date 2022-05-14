@@ -1,8 +1,8 @@
 import { GetStaticProps } from 'next';
 import { useEffect, useState } from 'react';
 const MainPage = (): JSX.Element => {
-	const [width, setWidth] = useState<string>('75px');
-	const [height, setHeight] = useState<string>('75px');
+	const [width, setWidth] = useState<string>('0px');
+	const [height, setHeight] = useState<string>('0px');
 	const [top, setTop] = useState<string>('0');
 
 	const [textOpacity, setTextOpacity] = useState<number>(100);
@@ -50,7 +50,7 @@ const MainPage = (): JSX.Element => {
 					top: top,
 				}}
 			>
-				<h1 className={'text-white font-semibold ' + (width === '3000px' ? 'hidden' : 'block')}>
+				<h1 className={'text-black font-semibold ' + (width === '3000px' ? 'hidden' : 'block')}>
 					Музей
 				</h1>
 			</button>
