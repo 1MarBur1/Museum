@@ -26,6 +26,8 @@ const MainPage = (): JSX.Element => {
 	];
 
 	useEffect(() => {
+		if (typeof window !== 'undefined' && localStorage.getItem('hasShowed') != '1')
+			localStorage.setItem('hasShowed', '0');
 		if (width != '4000px') {
 			setWidth('4000px');
 			setHeight('4000px');
