@@ -23,7 +23,7 @@ const MainPage = (): JSX.Element => {
 		'Надеемся, что тебе понравится, приятного просмотра!',
 	];
 
-	const onClick = () => {
+	useEffect(() => {
 		if (width != '4000px') {
 			setWidth('4000px');
 			setHeight('4000px');
@@ -34,7 +34,7 @@ const MainPage = (): JSX.Element => {
 				setBgColor('lightBlack');
 			}, 1500);
 		}
-	};
+	}, []);
 	
 	useEffect(() => {
 		if ((currentTextID >= 0) && (width === '4000px') && (currentTextID < texts.length)) {
@@ -51,8 +51,7 @@ const MainPage = (): JSX.Element => {
 	return(
 		<div className={'w-screen min-h-screen ' + `bg-${bgColor}`}>
 			<div className={'w-screen h-screen flex justify-center ' + (currentTextID === texts.length ? 'hidden' : 'block')}>
-				<button
-					onClick={onClick} 
+				<div
 					className={'bg-lightBlack inline-block rounded-full duration-[1500ms] absolute justify-self-center ' 
 						+ (bgColor === 'lightBlack' ? 'hidden' : 'block')}
 					style={{
@@ -61,10 +60,7 @@ const MainPage = (): JSX.Element => {
 						top: top,
 					}}
 				>
-					<h1 className={'text-black font-semibold ' + (width === '4000px' ? 'hidden' : 'block')}>
-						Музей
-					</h1>
-				</button>
+				</div>
 				
 				{currentTextID >= 0 && currentTextID < texts.length && (
 					<div className='flex items-center px-20'>
