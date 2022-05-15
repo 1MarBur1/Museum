@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import TechnologyCircle from '../../components/TechnologyCircle';
 import { Fade } from 'react-awesome-reveal';
+import BackArrow from '../../assets/BackArrow.svg';
 
 const TechnologiesPage = (): JSX.Element => {
 	const router = useRouter();
@@ -13,6 +14,9 @@ const TechnologiesPage = (): JSX.Element => {
 		<div className='min-h-screen w-screen bg-lightBlack text-white px-28 py-20'>
 			<Fade duration={1000}>
 				<div className='flex items-center gap-8'>
+					<button onClick={() => router.push('/')}>
+						<BackArrow />
+					</button>
 					<h1 className='text-7xl font-bold'>
 						Технологии
 					</h1>
