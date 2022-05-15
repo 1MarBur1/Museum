@@ -8,9 +8,8 @@ body {
 	margin: 0;
 	font-family: Travels;
 	font-size: 16px;
-	color: #272727;
-    overflow-x: hidden;
-    overflow-y: hidden;
+	color: #000;
+	overflow-x: hidden;
 }
 
 a {
