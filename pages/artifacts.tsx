@@ -1,8 +1,9 @@
+import { useRouter } from 'next/router';
 import Artifact from '../components/Artifact';
 import { Slide } from 'react-awesome-reveal';
+
 import BackArrow from '../assets/BackArrow.svg';
 import BigArrow from '../assets/BigArrow.svg';
-import { useRouter } from 'next/router';
 
 const ArtifactsPage = (): JSX.Element => {
 	const router = useRouter();
